@@ -7,7 +7,7 @@ async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule, {
     cors: true,
   });
-
+  app.setViewEngine('hbs');
   const config = app.get(ConfigService);
   const viewsDirectory = config.get<string>('templates.path');
   const publicDirectory = config.get<string>('public.path');
