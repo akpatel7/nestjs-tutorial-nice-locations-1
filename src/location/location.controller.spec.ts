@@ -1,13 +1,14 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { LocationController } from './location.controller';
+import { LocationService } from './location.service';
 
-describe('AppController', () => {
+describe('LocationController', () => {
   let locationController: LocationController;
 
   beforeEach(async () => {
     const app: TestingModule = await Test.createTestingModule({
       controllers: [LocationController],
-      providers: [],
+      providers: [LocationService],
     }).compile();
 
     locationController = app.get<LocationController>(LocationController);
