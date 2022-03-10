@@ -1,13 +1,13 @@
 import { resolve } from 'path';
 
-const SOURCE_PATH = resolve(__dirname, '..', 'src');
+const DIST_SOURCE_PATH = resolve(__dirname, '..', 'dist');
 
 export default {
   database: {
     url: 'postgres://app:app@localhost/locations',
   },
   orm: {
-    entities: [`${SOURCE_PATH}/**/*.entity.ts`],
+    entities: [`${DIST_SOURCE_PATH}/src/location/location.entity.js`],
     synchronize: false,
   },
   public: {
